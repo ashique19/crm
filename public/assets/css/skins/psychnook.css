@@ -1,0 +1,14 @@
+:root {
+  --splash: url('../images/sites/psychnook/splash.jpg');
+  --logo: url('../images/sites/psychnook/psychnook.png');
+  --primary-color: #7BC4BE;
+  --primary-rgba-color: 135, 216, 209;
+  --secondary-color: #306079;
+  --secondary-rgba-color: 48, 96, 121;  
+  --accent-color: #DEBC91;
+  --danger-color: #12857E;  
+  --white-color: #FFFFFF; 
+  --dark-color: #0d2a2f;
+  --dark-rgba-color: 13, 42, 47;    
+  --grey-color: #e1e1e1;  
+}

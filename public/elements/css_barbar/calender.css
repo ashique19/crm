@@ -1,0 +1,768 @@
+@font-face {
+  font-family: "linea-arrows-10";
+  src:url("fonts/linea-arrows-10.eot");
+  src:url("fonts/linea-arrows-10.eot?#iefix") format("embedded-opentype"),
+    url("fonts/linea-arrows-10.woff") format("woff"),
+    url("fonts/linea-arrows-10.ttf") format("truetype"),
+    url("fonts/linea-arrows-10.svg#linea-arrows-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+body table.booked-calendar th,
+body table.booked-calendar td {
+    font-family:"Open Sans", sans-serif;
+}
+
+body table.booked-calendar td {color:#656565}
+
+
+/* Custom Tooltip */
+
+.th-cal-tooltip {
+    position:relative;
+    margin:0 auto 6px;
+    padding:20px 10px;
+    text-align:center;
+    background-color:#353c40;
+    z-index:10;
+}
+
+.th-cal-tooltip:after {
+    content:'';
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-12px;
+    width:0;
+    height:0;
+    border-top:12px solid #353c40;
+    border-right:12px solid transparent;
+    border-left:12px solid transparent;
+}
+
+.th-cal-tooltip h3 {
+    font-size:18px;
+    font-weight:normal;
+    color:#fff;
+    line-height:120%;
+    margin:0;
+}
+.calender {
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+
+/* Buttons */
+
+body #booked-profile-page input[type=submit],
+body #booked-profile-page button,
+body table.booked-calendar input[type=submit],
+body table.booked-calendar button,
+body .booked-modal input[type=submit],
+body .booked-modal button {border-radius:50px}
+
+
+/* Calendar Styles */
+
+body table.booked-calendar {
+    background-color:#fff;
+    border:1px solid #ddd;
+    border-bottom:0;
+}
+
+body table.booked-calendar thead,
+body table.booked-calendar tr.days {text-transform:none}
+
+body table.booked-calendar thead th {letter-spacing:normal !important;}
+
+body table.booked-calendar .monthName {color:#353c40}
+body table.booked-calendar .monthName .backToMonth {color:#353c40; opacity:0.6}
+body table.booked-calendar .monthName .backToMonth:hover {color:#353c40; opacity:1}
+
+body table.booked-calendar tr.days th {color:#8d9093 !important}
+
+body table.booked-calendar td {
+    /*	max-height:94px !important; */
+    border:1px solid #ddd;
+    border-left:0 !important;
+    border-right:0 !important;
+}
+
+body table.booked-calendar td:hover .date {background:#fff}
+body table.booked-calendar td:hover .date .number {
+    color:#000;
+    background:#f9f9f9;
+}
+
+body table.booked-calendar td.prev-date .date,
+body table.booked-calendar td.prev-date:hover .date,
+body table.booked-calendar td.blur .date,
+body table.booked-calendar td.blur:hover .date,
+body table.booked-calendar td.next-month .date,
+body table.booked-calendar td.next-month:hover .date,
+body table.booked-calendar td.prev-month .date,
+body table.booked-calendar td.prev-month:hover .date {background:#fff !important}
+
+body table.booked-calendar td.next-month:hover .date .number,
+body table.booked-calendar td.prev-month:hover .date .number {color:#000}
+
+body table.booked-calendar td.blur:hover .date .number,
+body table.booked-calendar td.prev-date:hover .date .number {background:transparent !important}
+
+body table.booked-calendar td.prev-date .date,
+body table.booked-calendar td.prev-date:hover .date {color:#d0d0d0}
+
+body table.booked-calendar td.blur .date,
+body table.booked-calendar td.blur:hover .date {color:#e4e4e4}
+
+body table.booked-calendar td.today .date {
+    background:#fff;
+}
+body table.booked-calendar td.today:hover .date {
+    background:#fff;
+    color:#333;
+}
+body table.booked-calendar td.today .date .number,
+body table.booked-calendar td.today.prev-date .date .number {
+    color:#6c6c6c !important;
+    background:#e3f2f9;
+    border:0;
+}
+body table.booked-calendar td.today:hover .date .number {
+    background:#d4edf8 !important;
+    color:#000 !important;
+}
+body table.booked-calendar td.today.prev-date:hover .date {color:#6c6c6c}
+
+body table.booked-calendar td.booked .date,
+body table.booked-calendar td.booked:hover .date {
+    background:#fff !important;
+}
+body table.booked-calendar td.booked .date .number,
+body table.booked-calendar td.booked:hover .date .number {background:#ffefed !important}
+
+body table.booked-calendar td.today.booked .date {color:#f0b1a1}
+
+
+/* Small Calendar */
+
+body .booked-calendar-wrap.small table.booked-calendar td:hover .date {background:#fff}
+body .booked-calendar-wrap.small table.booked-calendar td:hover .date .number {background:#f9f9f9}
+
+body .booked-calendar-wrap.small table.booked-calendar td.prev-date .date,
+body .booked-calendar-wrap.small table.booked-calendar td.prev-date:hover .date,
+body .booked-calendar-wrap.small table.booked-calendar td.blur .date,
+body .booked-calendar-wrap.small table.booked-calendar td.blur:hover .date {background:#fff}
+
+body .booked-calendar-wrap.small table.booked-calendar td.blur:hover .date .number,
+body .booked-calendar-wrap.small table.booked-calendar td.prev-date:hover .date .number {background:transparent}
+
+body .booked-calendar-wrap.small table.booked-calendar td.today .date {
+    background:#fff;
+    color:#6c6c6c;
+}
+body .booked-calendar-wrap.small table.booked-calendar td.today:hover .date {
+    background:#fff;
+    color:#333;
+}
+body .booked-calendar-wrap.small table.booked-calendar td.today .date .number {background:#e3f2f9}
+body .booked-calendar-wrap.small table.booked-calendar td.today:hover .date .number { background:#e3f2f9}
+body .booked-calendar-wrap.small table.booked-calendar td.today.prev-date:hover .date {color:#6c6c6c}
+
+body .booked-calendar-wrap.small table.booked-calendar td.booked .date {
+    background:#fff;
+}
+body .booked-calendar-wrap.small table.booked-calendar td.booked:hover .date {background:#fff}
+body .booked-calendar-wrap.small table.booked-calendar td.booked .date .number {background:#ffeae7}
+body .booked-calendar-wrap.small table.booked-calendar td.booked:hover .date .number { background:#ffeae7}
+
+body .booked-calendar-wrap.small table.booked-calendar td.today.booked .date {color:#f0b1a1}
+
+
+/* Custom */
+/*
+body .booked-calendar-wrap.small table.booked-calendar td .date .number {
+	width:25px;
+	height:25px;
+	line-height:25px;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
+	border-radius:25px;
+} */
+
+body table.booked-calendar .fa.fa-arrow-right,
+body table.booked-calendar .fa.fa-arrow-left,
+body table.booked-calendar .booked-icon-arrow-right,
+body table.booked-calendar .booked-icon-arrow-left {
+    font-family:linea-arrows-10!important;
+    font-style:normal !important;
+    font-weight:normal !important;
+    font-variant:normal !important;
+    text-transform:none !important;
+    speak:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    color:#353c40;
+}
+body table.booked-calendar .fa.fa-arrow-left:before,
+body table.booked-calendar .booked-icon-arrow-left:before {content:"\e03f"}
+
+body table.booked-calendar .fa.fa-arrow-right:before,
+body table.booked-calendar .booked-icon-arrow-right:before {content:"\e04b"}
+
+body table.booked-calendar .fa.fa-spin,
+body table.booked-calendar .booked-icon-spin {color:#6f6f6f}
+
+body .booked-calendarSwitcher.calendar {
+    background:#e5e7e9 !important;
+    color:#414141 !important;
+    margin-bottom:1px;
+    border:1px solid #ddd;
+    border-bottom:0;
+    -moz-border-radius:3px 3px 0 0;
+    -webkit-border-radius:3px 3px 0 0;
+    border-radius:3px 3px 0 0;
+}
+body .booked-calendarSwitcher.calendar p i.fa,
+body .booked-calendarSwitcher.calendar p i.booked-icon-calendar {color:#414141 !important}
+body .booked-calendarSwitcher.calendar select {background:#e5e7e9 !important; color:#414141 !important; -moz-appearance: none;}
+
+body .booked-calendarSwitcher.calendar p {line-height:1.15}
+
+body .booked-calendarSwitcher.calendar p:before {
+    top:auto;
+    bottom:0;
+    color:#444;
+    font-size:15px;
+    z-index:5;
+}
+
+.cal-tooltip + .booked-calendar-shortcode-wrap .booked-calendarSwitcher {margin-top:20px}
+
+
+/**** Default & Custom Color Overrides */
+
+/* Light Color */
+
+body table.booked-calendar thead,
+body table.booked-calendar thead th
+{background:#e5e7e9 !important}
+
+body table.booked-calendar th
+{border-color:#e5e7e9 !important}
+
+body #booked-profile-page input[type=submit].button-primary:hover,
+body table.booked-calendar input[type=submit].button-primary:hover,
+body .booked-modal input[type=submit].button-primary:hover,
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+body #booked-profile-page .booked-profile-appt-list .appt-block .google-cal-button .atcb-link,
+body #booked-profile-page .booked-profile-header
+{background:#434a4d !important}
+
+body #booked-profile-page input[type=submit].button-primary:hover,
+body table.booked-calendar input[type=submit].button-primary:hover,
+body .booked-modal input[type=submit].button-primary:hover,
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+body #booked-profile-page .booked-profile-appt-list .appt-block .google-cal-button .atcb-link,
+body #booked-profile-page .booked-profile-header
+{border-color:#434a4d !important}
+
+
+/* Dark Color */
+
+body table.booked-calendar thead tr.days th,
+body table.booked-calendar tr.days
+{background:#f1f3f4 !important}
+
+body table.booked-calendar tr.days th
+{border-color:#f1f3f4 !important}
+
+
+/* Primary Button Color */
+
+body #booked-profile-page input[type=submit].button-primary,
+body table.booked-calendar input[type=submit].button-primary,
+body .booked-modal input[type=submit].button-primary,
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+body #booked-profile-page .booked-profile-appt-list .appt-block.approved .status-block
+{background:#F96D64 !important}
+
+body #booked-profile-page input[type=submit].button-primary,
+body table.booked-calendar input[type=submit].button-primary,
+body .booked-modal input[type=submit].button-primary,
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button
+{border-color:#F96D64 !important}
+
+.booked-modal p.booked-title-bar {background:#afafaf !important}
+
+
+/* Custom Color Additions */
+
+body table.booked-calendar th {border-color:#ddd !important}
+
+body table.booked-calendar tr.days {border:1px solid #ddd; border-top:0; border-bottom:0;}
+
+body table.booked-calendar tr.days th {border:0 !important}
+
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button[disabled],
+body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button[disabled]:hover {
+    background:#eee !important;
+    border-color:#ddd !important;
+    color:#aaa !important;
+}
+
+body #booked-profile-page .booked-tabs {
+    border-color:#ccc !important;
+    background-color:#ddd !important;
+}
+
+body #booked-profile-page .booked-tabs li a {
+    background:#eee;
+    color:#888;
+}
+body #booked-profile-page .booked-tabs li a:hover {
+    background:#f5f5f5;
+    color:#555;
+}
+
+body #booked-profile-page .booked-tabs li.active a,
+body #booked-profile-page .booked-tabs li.active a:hover {
+    background-color:#fff !important;
+    color:#555 !important;
+}
+
+body #booked-profile-page .booked-logout-button {color:#bbb}
+
+
+/**** END Custom Color Theme */
+
+
+/* Booked Form Styling */
+
+.bookedClearFix input, .bookedClearFix textarea {
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.bookedClearFix label {
+    margin-bottom:0;
+}
+
+
+/* Modal */
+
+.booked-modal .checkbox-radio-block input {height:auto}
+.booked-modal .checkbox-radio-block label {margin:inherit}
+
+body .booked-modal .bm-window p i.fa {color:#888 !important}
+
+
+/* Media Queries */
+
+@media screen and (max-width:720px) {
+    body table.booked-calendar td .date .number {
+        width:30px;
+        height:30px;
+        line-height:30px;
+        -moz-border-radius:25px;
+        -webkit-border-radius:25px;
+        border-radius:25px;
+    }
+
+    body table.booked-calendar tbody td, body table.booked-calendar tr.days,
+    body table.booked-calendar thead th {
+        border-collapse:separate !important;
+        border-bottom: 1px solid #ddd !important;
+    }
+}
+
+@media screen and (max-width:480px) {
+    body table.booked-calendar td .date .number {
+        width:25px;
+        height:25px;
+        line-height:25px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    body .booked-calendar-wrap.small table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-timeslot {
+        font-size:11px;
+    }
+}
+
+
+
+
+.th-book-cal-large {max-width:700px}
+
+.th-book-cal-small {max-width:400px}
+
+.th-book-cal-large,
+.th-book-cal-small {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.th-book-cal-large.th-left,
+.th-book-cal-small.th-left {margin-left:0}
+
+.th-book-cal-large.th-right,
+.th-book-cal-small.th-right {margin-right:0}
+
+@media (min-width:1100px) {
+    body table.booked-calendar th .monthName {font-size:20px}
+}
+
+
+/* Calendar in Column */
+
+@media screen and (min-width:721px){
+    body .th-book-cal-small table.booked-calendar .booked-appt-list { max-height:190px; overflow-y: scroll; overflow-x: hidden; padding:15px 20px 10px; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list h2 { text-align:center; margin:0 0 15px; font-size:16px; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list h2 span { display:none }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot { border-top:0; margin:0 0 6px; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-time,
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-count { display:none; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-people { width:100%; padding:0; height:auto; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-people button { float:none; margin:0; width:100%; text-align:center; }
+
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-timeslot { display:block; font-weight:600; font-size:13px; }
+    body .th-book-cal-small table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-text { display:none; }
+}
+
+/* Calendar on Page w/ Sidebar */
+
+@media screen and (min-width:721px) and (max-width:991px) {
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list h2 { text-align:center; margin:0 0 15px; font-size:16px; }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list h2 span { display:none }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot { border-top:0; margin:0 0 6px; }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-time,
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-count { display:none; }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-people { width:100%; padding:0; height:auto; }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-people button { float:none; margin:0; width:100%; text-align:center; }
+
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-timeslot { display:block; font-weight:600; font-size:13px; }
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-text { display:none; }
+}
+
+@media screen and (min-width:1200px) {
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-time {width:35%}
+    body .main.col-sm-8 table.booked-calendar .booked-appt-list .timeslot .timeslot-count {width:35%}
+}
+
+/* Full Calendar at Smaller Screen Sizes */
+
+@media screen and (min-width:721px) and (max-width:767px) {
+    body .th-book-cal-large table.booked-calendar .booked-appt-list { max-height:190px; overflow-y: scroll; overflow-x: hidden; padding:15px 20px 10px; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list h2 { text-align:center; margin:0 0 15px; font-size:16px; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list h2 span { display:none }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot { border-top:0; margin:0 0 6px; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-time,
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-count { display:none; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-people { width:100%; padding:0; height:auto; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-people button { float:none; margin:0; width:100%; text-align:center; }
+
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-timeslot { display:block; font-weight:600; font-size:13px; }
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-people button .button-text { display:none; }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    body .th-book-cal-large table.booked-calendar .booked-appt-list .timeslot .timeslot-time {font-size:14px}
+}
+
+
+/*Tooltips*/
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+    border-radius: 5px; 
+    border: 2px solid #000;
+    background: #4c4c4c;
+    color: #fff;
+}
+
+/* Use this next selector to style things like font-size and line-height: */
+.tooltipster-default .tooltipster-content {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 8px 10px;
+    overflow: hidden;
+}
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+    /* border-color: ... !important; */
+}
+
+
+/* If you're using the icon option, use this next selector to style them */
+.tooltipster-icon {
+    cursor: help;
+    margin-left: 4px;
+}
+
+
+
+
+
+
+
+
+/* This is the base styling required to make all Tooltipsters work */
+.tooltipster-base {
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+    pointer-events: none;
+    width: auto;
+    overflow: visible;
+}
+.tooltipster-base .tooltipster-content {
+    overflow: hidden;
+}
+
+
+/* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
+.tooltipster-arrow {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    z-index: -1;
+}
+.tooltipster-arrow span, .tooltipster-arrow-border {
+    display: block;
+    width: 0; 
+    height: 0;
+    position: absolute;
+}
+.tooltipster-arrow-top span, .tooltipster-arrow-top-right span, .tooltipster-arrow-top-left span {
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-top: 8px solid;
+    bottom: -7px;
+}
+.tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-top-left .tooltipster-arrow-border {
+    border-left: 9px solid transparent !important;
+    border-right: 9px solid transparent !important;
+    border-top: 9px solid;
+    bottom: -7px;
+}
+
+.tooltipster-arrow-bottom span, .tooltipster-arrow-bottom-right span, .tooltipster-arrow-bottom-left span {
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-bottom: 8px solid;
+    top: -7px;
+}
+.tooltipster-arrow-bottom .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+    border-left: 9px solid transparent !important;
+    border-right: 9px solid transparent !important;
+    border-bottom: 9px solid;
+    top: -7px;
+}
+.tooltipster-arrow-top span, .tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-bottom span, .tooltipster-arrow-bottom .tooltipster-arrow-border {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.tooltipster-arrow-top-left span, .tooltipster-arrow-bottom-left span {
+    left: 6px;
+}
+.tooltipster-arrow-top-left .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+    left: 5px;
+}
+.tooltipster-arrow-top-right span,  .tooltipster-arrow-bottom-right span {
+    right: 6px;
+}
+.tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border {
+    right: 5px;
+}
+.tooltipster-arrow-left span, .tooltipster-arrow-left .tooltipster-arrow-border {
+    border-top: 8px solid transparent !important;
+    border-bottom: 8px solid transparent !important; 
+    border-left: 8px solid;
+    top: 50%;
+    margin-top: -7px;
+    right: -7px;
+}
+.tooltipster-arrow-left .tooltipster-arrow-border {
+    border-top: 9px solid transparent !important;
+    border-bottom: 9px solid transparent !important; 
+    border-left: 9px solid;
+    margin-top: -8px;
+}
+.tooltipster-arrow-right span, .tooltipster-arrow-right .tooltipster-arrow-border {
+    border-top: 8px solid transparent !important;
+    border-bottom: 8px solid transparent !important; 
+    border-right: 8px solid;
+    top: 50%;
+    margin-top: -7px;
+    left: -7px;
+}
+.tooltipster-arrow-right .tooltipster-arrow-border {
+    border-top: 9px solid transparent !important;
+    border-bottom: 9px solid transparent !important; 
+    border-right: 9px solid;
+    margin-top: -8px;
+}
+
+
+/* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
+
+.tooltipster-fade {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    -ms-transition-property: opacity;
+    transition-property: opacity;
+}
+.tooltipster-fade-show {
+    opacity: 1;
+}
+
+.tooltipster-grow {
+    opacity:0;
+    -webkit-transform: translate3d(0,5px,0);
+    -moz-transform: translate3d(0,5px,0);
+    -o-transform: translate3d(0,5px,0);
+    -ms-transform: translate3d(0,5px,0);
+    transform: translate3d(0,5px,0);
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-backface-visibility: hidden;
+}
+.tooltipster-grow-show {
+    opacity:1;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.tooltipster-swing {
+    opacity: 0;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -o-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    transform: rotateZ(4deg);
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+}
+.tooltipster-swing-show {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+    -moz-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+    -ms-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+    -o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+    transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+}
+
+.tooltipster-fall {
+    top: 0;
+    -webkit-transition-property: top;
+    -moz-transition-property: top;
+    -o-transition-property: top;
+    -ms-transition-property: top;
+    transition-property: top;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+}
+.tooltipster-fall-show {
+}
+.tooltipster-fall.tooltipster-dying {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    -ms-transition-property: all;
+    transition-property: all;
+    top: 0px !important;
+    opacity: 0;
+}
+
+.tooltipster-slide {
+    left: -40px;
+    -webkit-transition-property: left;
+    -moz-transition-property: left;
+    -o-transition-property: left;
+    -ms-transition-property: left;
+    transition-property: left;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+}
+.tooltipster-slide.tooltipster-slide-show {
+}
+.tooltipster-slide.tooltipster-dying {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    -ms-transition-property: all;
+    transition-property: all;
+    left: 0px !important;
+    opacity: 0;
+}
+
+
+/* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
+.tooltipster-content-changing {
+    opacity: 0.5;
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+.tooltipster-light {
+    border-radius: 3px; 
+    border: 1px solid #ddd;
+    -moz-box-shadow:0 1px 2px rgba(0,0,0,0.1); -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.1); box-shadow:0 1px 2px rgba(0,0,0,0.1);
+    background: #fff;
+    color: #888;
+}
+.tooltipster-light .tooltipster-content {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 8px 10px;
+}
+/*//Tooltips*/

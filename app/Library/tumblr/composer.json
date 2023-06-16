@@ -1,0 +1,6 @@
+{
+    "require": {
+        "tumblr/tumblr": "^0.4.0",
+        "eher/oauth": "^1.0"
+    }
+}

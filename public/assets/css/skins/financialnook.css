@@ -1,0 +1,14 @@
+:root {
+  --splash: url('../images/sites/financialnook/splash.jpg');
+  --logo: url('../images/sites/financialnook/financialnook.png');
+  --primary-color: #95CF4C;
+  --primary-rgba-color: 149, 207, 76;
+  --secondary-color: #4F598D;
+  --secondary-rgba-color: 79, 89, 141;   
+  --accent-color: #38603C;
+  --danger-color: #12857E;
+  --white-color: #FFFFFF; 
+  --dark-color: #0d2a2f;
+  --dark-rgba-color: 13, 42, 47;    
+  --grey-color: #e1e1e1;  
+}

@@ -1,0 +1,14 @@
+:root {
+  --splash: url('../images/sites/hypnonook/splash.jpg');
+  --logo: url('../images/sites/hypnonook/hypnonook.png');
+  --primary-color: #4F598D;
+  --primary-rgba-color: 79, 89, 141;
+  --secondary-color: #4F598D;
+  --secondary-rgba-color: 79, 89, 141;   
+  --accent-color: #38603C;
+  --danger-color: #12857E;
+  --white-color: #FFFFFF; 
+  --dark-color: #0d2a2f;
+  --dark-rgba-color: 13, 42, 47;    
+  --grey-color: #e1e1e1;  
+}

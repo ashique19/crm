@@ -1,0 +1,14 @@
+:root {
+  --splash: url('../images/sites/acunook/splash.jpg');
+  --logo: url('../images/sites/acunook/acunook.png');    
+  --primary-color: #A5B1A8;
+  --primary-rgba-color: 165, 177, 168;
+  --secondary-color: #59596C;
+  --secondary-rgba-color: 89, 89, 108;  
+  --accent-color: #DEBC91;
+  --danger-color: #12857E;  
+  --white-color: #FFFFFF; 
+  --dark-color: #0d2a2f;
+  --dark-rgba-color: 13, 42, 47;    
+  --grey-color: #e1e1e1;  
+}

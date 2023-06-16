@@ -1,0 +1,14 @@
+:root {
+  --splash: url('../images/sites/trainernook/splash.jpg');
+  --logo: url('../images/sites/trainernook/trainernook.png');
+  --primary-color: #98B92D;
+  --primary-rgba-color: 152, 185, 45;
+  --secondary-color: #3C4043;
+  --secondary-rgba-color: 60, 64, 67;  
+  --accent-color: #38603C;
+  --danger-color: #12857E;
+  --white-color: #FFFFFF; 
+  --dark-color: #0d2a2f;
+  --dark-rgba-color: 13, 42, 47;    
+  --grey-color: #e1e1e1;  
+}
